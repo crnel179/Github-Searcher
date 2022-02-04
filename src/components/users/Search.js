@@ -23,7 +23,7 @@ export class Search extends Component {
         <form onSubmit={this.onSubmit} className='form'>
 
         <input type='text' name='text' placeholder='Search Users...'value={this.state.text} onChange={this.onChange}/>
-        <input type='submit' value='search' className='btn btn-dark btn-block'/>
+        <input type='submit' value='search' className='btn btn-primary btn-block'/>
         </form>
     </div>;
   }
