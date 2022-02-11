@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { About } from './components/pages/About';
 import Navbar from './components/layout/Navbar';
 import Users from './components/users/Users';
 import Search from './components/users/Search';
@@ -49,19 +51,36 @@ class App extends Component {
         const { users, loading } = this.state;
 
         return (
-            <div className='App'>
-                <Navbar title=' Github Searcher ' icon='fab fa-github' />
-                <div className='container'>
-                    <Alert alert={this.state.alert} />
-                    <Search
-                        searchUser={this.searchUser}
-                        clearUsers={this.clearUsers}
-                        showClear={users.length > 0 ? true : false}
-                        setAlert={this.setAlert}
-                    />
-                    <Users loading={loading} users={users} />
+            <Router>
+                <div className='App'>
+                    <Navbar title=' Github Searcher ' icon='fab fa-github' />
+                    <div className='container'>
+                        <Alert alert={this.state.alert} />
+                        <Routes>
+                            <Route
+                                path='/'
+                                element={
+                                    <Fragment>
+                                        <Search
+                                            searchUser={this.searchUser}
+                                            clearUsers={this.clearUsers}
+                                            showClear={
+                                                users.length > 0 ? true : false
+                                            }
+                                            setAlert={this.setAlert}
+                                        />
+                                        <Users
+                                            loading={loading}
+                                            users={users}
+                                        />
+                                    </Fragment>
+                                }
+                            />
+                            <Route path='/about' element={<About />} />
+                        </Routes>
+                    </div>
                 </div>
-            </div>
+            </Router>
         );
     }
 }

@@ -212,12 +212,12 @@ img {
     outline: none;
 }
 
-.btn-round {
-    border-radius: 17%;
+.round-3 {
+    border-radius: 3%;
 }
 
-.btn-round1 {
-    border-radius: 3%;
+.round-17 {
+    border-radius: 17%;
 }
 
 .btn-link {
@@ -397,6 +397,18 @@ table th {
 
 .navbar .welcome span {
     margin-right: 0.6rem;
+}
+
+.about {
+    color: #218bff;
+    background-color: #ccc;
+}
+
+.about h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.about p {
+    font-family: cursive;
 }
 
 /* Mobile Styles */
