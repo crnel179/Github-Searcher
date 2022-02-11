@@ -216,6 +216,10 @@ img {
     border-radius: 17%;
 }
 
+.btn-round1 {
+    border-radius: 3%;
+}
+
 .btn-link {
     background: none;
     padding: 0;
